@@ -18,6 +18,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     </spring:beans>
     <jms:activemq-connector name="Active_MQ" brokerURL="vm://localhost" validateConnections="true" doc:name="Active MQ"/>
     <flow name="mavenFlow">
+        
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP"/>
         <db:select config-ref="Derby_Configuration" doc:name="Database">
             <db:parameterized-query><![CDATA[Select * from FLIGHTS]]></db:parameterized-query>
